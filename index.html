@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fuzzy logic</title>
+    </head>
+    <body>
+        <div id = "body" style = "margin: 0 auto; width: 1100px">
+            <h1>Algoritmo de detecção de arestas utilizando lógica Fuzzy</h1></br>
+            Disitribuição: <input type = "radio" value = "1" id = "d1" name = "dist">1
+            <input type = "radio" value = 2 id = "d2" name = "dist">2</br>
+            Método: <input type = "radio" value = "mom" id ="mom" name = "defuzz">MoM
+            <input type = "radio" value = "cos" id = "cos"name = "defuzz">CoS </br>
+            Desvio padrão:<input type = "number" id = "dp" value = "0.2">
+            <button type = button" id = "go">Iniciar</button></br>
+            <canvas id = "original" width = "499" height = "374"></canvas>
+            <canvas id ="edge-detection" width = "499" height = "374"></canvas>
+            <script src = "script.js"></script>
+        </div>
+    </body>
+</html>
