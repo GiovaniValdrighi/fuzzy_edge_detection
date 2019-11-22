@@ -65,14 +65,14 @@ img.onload = function(){
             //dist points values
             if(dist == 1){
                 a = 0.0;
-                b = 0.7 + mu_b_iout*(-0.7);
-                d = 0.1 + mu_w_iout*0.9;
-                e = 1.0;
+                b = 140 + mu_b_iout*(-140);
+                d = 120 + mu_w_iout*135;
+                e = 255;
             }else{
                 a = 0.0;
-                b = 0.15  + mu_b_iout*(-0.1);
-                d = 0.85 + mu_w_iout*0.1;
-                e = 1.0;
+                b = 40  + mu_b_iout*(-20);
+                d = 50*215/20 + mu_w_iout*50;
+                e = 255;
             }
 
             //calculating value
@@ -88,9 +88,9 @@ img.onload = function(){
                 }else{
                     fom = 0.5; lom = 0.5; mom = 0.5;
                 }
-                data.data[i] = mom*255;
-                data.data[i+1] = mom*255;
-                data.data[i+2] = mom*255;
+                data.data[i] = lom;
+                data.data[i+1] = lom;
+                data.data[i+2] = lom;
             }else{
                 A1 = mu_b_iout*(b - a);
                 A2 = mu_b_iout*(0.7 - b)/2;
@@ -103,11 +103,12 @@ img.onload = function(){
                 cx4 = (e -d)/2;
                 cxw = (A3*cx3 + A4*cx4)/(A3 + A4);
                 cx = ((A1+A2)*cxb + (A3+A4)*cxw)/(A1+A2+A3+A4);
-                data.data[i] = cx*255;
-                data.data[i+1] = cx*255;
-                data.data[i+2] = cx*255;
+                data.data[i] = cx;
+                data.data[i+1] = cx;
+                data.data[i+2] = cx;
             }
         }
+        console.log(data);
         ctx.putImageData(data, 0, 0);
     });
 
